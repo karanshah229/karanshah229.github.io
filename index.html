@@ -17,7 +17,6 @@
 		<nav class="container">
 			<a href="#experience" class="header__quick_link">Experience</a>
 			<a href="#skills" class="header__quick_link">Skills</a>
-			<a href="#projects" class="header__quick_link">Projects</a>
 			<a href="#education" class="header__quick_link">Education</a>
 			<a href="#clients" class="header__quick_link">Clients</a>
 			<a href="#resume" class="header__quick_link">Resume</a>
@@ -63,17 +62,17 @@
 				<div class="hero__card__bottom">
 					<span>
 						<a href="https://www.linkedin.com/in/karan-shah-195703169/" target="_blank">
-							<img src="images/linkedin.png" alt="Linked In Profile" class="social_link_icons">
+							<img src="images/social/linkedin.png" alt="Linked In Profile" class="social_link_icons">
 						</a>
 					</span>
 					<span>
 						<a href="https://github.com/karanshah229" target="_blank">
-							<img src="images/github.png" alt="Github Profile" class="social_link_icons">
+							<img src="images/social/github.png" alt="Github Profile" class="social_link_icons">
 						</a>
 					</span>
 					<span>
 						<a href="mailto:karanshah229@gmail.com" target="_blank">
-							<img src="images/email.png" alt="Email" class="social_link_icons">
+							<img src="images/social/email.png" alt="Email" class="social_link_icons">
 						</a>
 					</span>
 				</div>
@@ -132,7 +131,8 @@
 		<div class="skills__heading">SKILLS</div>
 		<div class="skills__body">
 			<div class="skills__body__search">
-				<input type="search" placeholder="Search Skill" class="skills__body__search__input">
+				<input type="search" placeholder="Search Skill" id="skills__body__search__input" class="skills__body__search__input">
+				<button onclick="searchSkill()"><img src="images/skills/search.png" alt="Search"></button>
 			</div>
 			<div class="skills__body__legend">
 				<div class="advanced legend__item"></div> <div>Advanced</div>
@@ -141,11 +141,6 @@
 			</div>
 			<div class="skills__body__skill-pills" id="skills__body__skill_pills"></div>
 		</div>
-	</div>
-
-	<!-- Projects -->
-	<div id="projects">
-
 	</div>
 
 	<!-- Education -->
@@ -189,9 +184,9 @@
 	<div id="clients">
 		<div class="clients__heading">CLIENTS</div>
 		<div class="clients__body">
+			<a href="https://wealthfare.in/" target="_blank"><img src="images/clients/wealthfare.png" alt="Wealthfare"></a>
 			<a href="https://acadpal.com/" target="_blank"><img src="images/clients/acadpal.jpg" alt="AcadPal"></a>
 			<a href="http://www.birdhelpline.com/" target="_blank"><img src="images/clients/bah.png" alt="Bird Animal Helpline"></a>
-			<a href="https://wealthfare.in/" target="_blank"><img src="images/clients/wealthfare.png" alt="Wealthfare"></a>
 			<a href="https://justbewellness.co.in/" target="_blank"><img src="images/clients/justbewellness.jpg" alt="Just Be Wellness"></a>
 		</div>
 	</div>
@@ -218,12 +213,40 @@
 
 	<!-- Contact Me -->
 	<div id="contact">
-		
+		<div class="contact__heading">CONTACT ME</div>
+		<div class="contact__body">
+			<div class="contact__body__left">
+				<div class="contact-form">
+					<div> <input type="text" placeholder="Name"> </div>
+					<div> <input type="text" placeholder="Email"> </div>
+					<div> <input type="text" placeholder="Subject"> </div>
+					<div> <textarea></textarea> </div>
+					<div> <button onclick="alert('Backend not attached yet')">Submit</button> </div>
+				</div>
+			</div>
+			<div class="contact__body__right">
+				<div>
+					<div class="contact__body__right__name">Karan Shah</div>
+					<div class="contact__body__right__profession">SOFTWARE DEVELOPER</div>
+				</div>
+				<div>
+					<div class="contact__body__right__heading">Phone:</div>
+					<div>+91-9029177227</div>
+				</div>
+				<div>
+					<div class="contact__body__right__heading">Email:</div>
+					<div>karanshah229@gmail.com</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
+	<!-- Footer -->
+	<footer> Made with ❤ by Karan Shah ✌ </footer>
 
 
 	<script>
-		// A bit a JS to do the trick
+		// A bit of JS to do the trick
 
 		function createPill(item, index, arr){
 			var div = document.createElement("DIV");
@@ -264,7 +287,36 @@
 
 		skillsToShow = [...skills]
 
+		document.getElementById("skills__body__skill_pills").innerHTML = "";
 		skillsToShow.forEach(createPill);
+
+		function searchSkill(){
+			skillsToShow = []
+			function findSkill(item, index, array){
+				var skill = Object.keys(item)[0].toLowerCase()
+				if (skill.includes(key)){
+					skillsToShow.push(item)
+				}
+			}
+
+			var key = document.getElementById("skills__body__search__input").value.trim();
+			if(key){
+				skills.forEach(findSkill)
+			} else {
+				skillsToShow.splice(0, skillsToShow.length)
+				skillsToShow = [...skills]
+			}
+
+			document.getElementById("skills__body__skill_pills").innerHTML = "";
+			if(skillsToShow.length) skillsToShow.forEach(createPill);
+			else {
+				var div = document.createElement("DIV");
+				div.textContent = "No Skills matching Search key";
+				div.classList.add("pill");
+				div.classList.add("advanced");
+				document.getElementById("skills__body__skill_pills").appendChild(div);
+			}
+		}
 
 	</script>
 </body>

@@ -33,7 +33,7 @@ a { text-decoration: none; color: black; }
 /* Hero */
 
 .hero {
-	background-image: url("images/hero-background.jpg");
+	background-image: url("images/hero/hero-background.jpg");
 	background-attachment: fixed;
 	background-position: right center;
 	background-repeat: no-repeat;
@@ -57,7 +57,7 @@ a { text-decoration: none; color: black; }
 .hero__card__top div { flex: 1; }
 
 .hero__card__left {
-	background-image: url("images/Karan_Shah.jpg");
+	background-image: url("images/hero/Karan_Shah.jpg");
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -114,7 +114,7 @@ a { text-decoration: none; color: black; }
 	margin-bottom: 2rem;
 }
 
-.hero__text__body { max-width: 1000px; }
+.hero__text__body { max-width: 900px; }
 
 /* Experience */
 .experience__heading {
@@ -191,6 +191,11 @@ a { text-decoration: none; color: black; }
 	background-color: #F1F1F1;
 }
 
+.skills__body__search {
+	display: flex;
+	align-items: center;
+}
+
 .skills__body__search__input {
 	border: none;
 	border-bottom: 1px solid #CCC;
@@ -203,6 +208,15 @@ a { text-decoration: none; color: black; }
 	font-size: 1.1rem;
 	background-color: transparent;
 }
+
+.skills__body__search button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.skills__body__search button img { width: 25px }
 
 .skills__body__legend {
 	margin-top: 1rem;
@@ -289,9 +303,79 @@ a { text-decoration: none; color: black; }
 	display: flex;
 	justify-content: center;
 	align-items: stretch;
-	border-bottom: 1px solid #EEE;
 	margin-top: 1.5rem;
 }
 
 .resume__body a:first-child { margin-right: 5rem; }
 .resume__body img { width: 100px }
+
+/* Contact */
+.contact__heading {
+	background-color: #182153;
+	color: white;
+	letter-spacing: 3px;
+	font-weight: 600;
+	font-size: 1.3rem;
+	padding: 2rem 0;
+	text-align: center;
+	border-bottom: 1px solid #EEE;
+}
+
+.contact__body {
+	background-color: #F1F1F1;
+	padding: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact__body__left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding-right: 3rem;
+}
+.contact-form { width: 50% }
+.contact-form div { margin: 1rem 0; }
+
+#contact input, #contact textarea {
+	all: unset;
+    box-sizing: border-box;
+	background-color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	font-size: small;
+	width: 100%;
+}
+
+#contact button {
+	background-color: #182153;
+	color: white;
+	outline: none;
+	border: none;
+	padding: 1rem 2rem;
+	width: 100%;
+	cursor: pointer;
+}
+
+.contact__body__right {
+	flex: 1;
+	padding-left: 3rem;
+	display: flex;
+	flex-direction: column;
+}
+.contact__body__right div { margin: 5px 0 }
+
+.contact__body__right__name { font-size: 1.5rem; line-height: 1; }
+
+.contact__body__right__profession { font-size: smaller; font-weight: bold; }
+
+.contact__body__right__heading { font-weight: bold; }
+
+footer {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
