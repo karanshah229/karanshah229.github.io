@@ -415,7 +415,7 @@ footer {
 		margin: 0.75rem 0.75rem;
 		color: #ffffff90;
 	}
-	#mobile_menu .header__quick_link .active { color: white; }
+	#mobile_menu .header__quick_link.active { color: white; }
 	.mobile_menu_footer {
 		bottom: 0;
 		color: white;
