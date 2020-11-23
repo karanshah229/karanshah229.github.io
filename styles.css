@@ -4,6 +4,7 @@ html, body {
 	scroll-behavior: smooth;
 	font-family: 'Montserrat', sans-serif;
 	line-height: 1.7;
+	color: #182153;
 }
 
 a { text-decoration: none; color: black; }
@@ -22,7 +23,7 @@ a { text-decoration: none; color: black; }
 	align-items: center;
 	z-index: 100;
 	background-color: white;
-	color: #182153;
+	border-bottom: 3px solid #182153;
 }
 
 .header__heading { font-size: 2rem; }
@@ -48,7 +49,7 @@ a { text-decoration: none; color: black; }
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	max-width: 900px;
+	max-width: 1000px;
 }
 
 .hero__card__top { display: flex; background-color: #F1F1F1; }
@@ -113,6 +114,184 @@ a { text-decoration: none; color: black; }
 	margin-bottom: 2rem;
 }
 
-.hero__text__body {
-	max-width: 60%;
+.hero__text__body { max-width: 1000px; }
+
+/* Experience */
+.experience__heading {
+	color: #182153;
+	letter-spacing: 3px;
+	font-weight: 600;
+	font-size: 1.3rem;
+	padding: 2rem 0;
+	text-align: center;
+	border-bottom: 1px solid #EEE;
 }
+
+.experience__body {
+	padding: 3rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.experience__body__exp {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	max-width: 1000px;
+}
+
+.experience__body__exp__left {
+	border-right: 1px solid #EEE;
+	text-align: right;
+}
+
+.experience__body__exp__left, .experience__body__exp__right {
+	flex: 1;
+	padding: 3rem;
+	padding-top: 0;
+}
+
+.experience__body__exp__left::before {
+	position: relative;
+	display: block;
+	background-color: #182153;
+	content: '';
+	border-radius: 50%;
+	height: 7px;
+	width: 7px;
+	float: right;
+	right: calc(-3.5px + -3rem);
+}
+
+.experience__body__exp__left__date { font-weight: bold; letter-spacing: 1px; }
+.experience__body__exp__left__position { font-size: small; }
+
+.experience__body__exp__right__company-name { letter-spacing: 1px; }
+.experience__body__exp__right__text { margin-top: 5px; font-size: small; }
+
+/* Skills */
+.skills__heading {
+	background-color: #182153;
+	color: white;
+	letter-spacing: 3px;
+	font-weight: 600;
+	font-size: 1.3rem;
+	padding: 2rem 0;
+	text-align: center;
+	border-bottom: 1px solid #EEE;
+}
+
+.skills__body { 
+	padding: 3rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #F1F1F1;
+}
+
+.skills__body__search__input {
+	border: none;
+	border-bottom: 1px solid #CCC;
+	outline: none;
+	padding: 1rem;
+	padding-left: 5px;
+	letter-spacing: 1px;
+	width: 900px;
+	display: block;
+	font-size: 1.1rem;
+	background-color: transparent;
+}
+
+.skills__body__legend {
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.skills__body__legend .legend__item {
+	color: transparent;
+	border-radius: 50%;
+	height: 15px;
+	width: 15px;
+	margin-left: 1.5rem;
+	margin-right: 5px;
+}
+
+.skills__body__skill-pills {
+	padding: 3rem 0;
+	width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.skills__body__skill-pills .pill {
+	padding: 0.5rem 2rem;
+	border-radius: 25px;
+	color: white;
+	margin: 0 2px;
+	margin-bottom: 5px;
+}
+
+.basic { background-color: #4155C8; }
+.intermediate, .level-ii { background-color: #25327E; }
+.advanced, .proficent, .mother-tongue { background-color: black; }
+
+/* Education */
+#education { border-bottom: 1px solid #EEE; }
+
+/* Clients */
+.clients__heading {
+	color: #182153;
+	letter-spacing: 3px;
+	font-weight: 600;
+	font-size: 1.3rem;
+	padding: 2rem 0;
+	text-align: center;
+	border-bottom: 1px solid #EEE;
+}
+
+.clients__body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3rem;
+	border-bottom: 1px solid #EEE;
+}
+
+.clients__body a { margin: 0 2rem; }
+
+.clients__body img {
+	width: 100px;
+	opacity: 0.65;
+	transition: opacity 200ms ease-in-out;
+}
+
+.clients__body img:hover { opacity: 1; }
+
+/* Resume */
+.resume__heading {
+	color: #182153;
+	letter-spacing: 3px;
+	font-weight: 600;
+	font-size: 1.3rem;
+	padding: 2rem 0;
+	text-align: center;
+	border-bottom: 1px solid #EEE;
+}
+
+.resume__body { padding: 3rem; }
+
+.resume__body__links {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	border-bottom: 1px solid #EEE;
+	margin-top: 1.5rem;
+}
+
+.resume__body a:first-child { margin-right: 5rem; }
+.resume__body img { width: 100px }
