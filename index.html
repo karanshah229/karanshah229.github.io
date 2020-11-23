@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Karan Shah</title>
-	<link rel="icon" href="favicon.ico" type="image/png">
+	<link rel="icon" href="favico.ico" type="image/png">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body>
 
@@ -15,12 +16,12 @@
 	<nav class="header">
 		<div><span class="header__heading">Karan Shah</span></div>
 		<nav class="container">
-			<a href="#experience" class="header__quick_link">Experience</a>
-			<a href="#skills" class="header__quick_link">Skills</a>
-			<a href="#education" class="header__quick_link">Education</a>
-			<a href="#clients" class="header__quick_link">Clients</a>
-			<a href="#resume" class="header__quick_link">Resume</a>
-			<a href="#contact" class="header__quick_link">Contact</a>
+			<a href="#experience" id="nav_experience" class="header__quick_link">Experience</a>
+			<a href="#skills" id="nav_skills" class="header__quick_link">Skills</a>
+			<a href="#education" id="nav_education" class="header__quick_link">Education</a>
+			<a href="#clients" id="nav_clients" class="header__quick_link">Clients</a>
+			<a href="#resume" id="nav_resume" class="header__quick_link">Resume</a>
+			<a href="#contact" id="nav_contact" class="header__quick_link">Contact</a>
 		</nav>
 	</nav>
 
@@ -34,8 +35,8 @@
 		<div class="hero">
 			<div class="hero__card">
 				<div class="hero__card__top">
-					<div class="hero__card__left"></div>
-					<div class="hero__card__right">
+					<div class="hero__card__left animate__animated animate__fadeInLeft"></div>
+					<div class="hero__card__right animate__animated animate__fadeInRight">
 						<div>
 							<div class="hero__card__right__name">Karan Shah</div>
 							<div class="hero__card__right__profession">SOFTWARE DEVELOPER</div>
@@ -59,7 +60,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="hero__card__bottom">
+				<div class="hero__card__bottom animate__animated animate__fadeInUp">
 					<span>
 						<a href="https://www.linkedin.com/in/karan-shah-195703169/" target="_blank">
 							<img src="images/social/linkedin.png" alt="Linked In Profile" class="social_link_icons">
@@ -95,32 +96,42 @@
 		<div class="experience__body">
 			<div class="experience__body__exp">
 				<div class="experience__body__exp__left">
-					<div class="experience__body__exp__left__date">2020-2023</div>
-					<div class="experience__body__exp__left__position">Senior Web. Developer</div>
+					<div class="experience__body__exp__left__date">July - August 2020</div>
+					<div class="experience__body__exp__left__position">Angular Developer</div>
 				</div>
 				<div class="experience__body__exp__right">
-					<div class="experience__body__exp__right__company-name">COMPANY NAME</div>
-					<div class="experience__body__exp__right__text">DESCRIPTION</div>
+					<div class="experience__body__exp__right__company-name">Acadpal</div>
+					<div class="experience__body__exp__right__text">Worked as an Angular developer to develop the Acadpal portal involving live lectures, quizes, assignments, full format tests, socket programming and much more.</div>
 				</div>
 			</div>
 			<div class="experience__body__exp">
 				<div class="experience__body__exp__left">
-					<div class="experience__body__exp__left__date">2020-2023</div>
-					<div class="experience__body__exp__left__position">Senior Web. Developer</div>
+					<div class="experience__body__exp__left__date">May - June 2020</div>
+					<div class="experience__body__exp__left__position">Portfolio Developer</div>
 				</div>
 				<div class="experience__body__exp__right">
-					<div class="experience__body__exp__right__company-name">COMPANY NAME</div>
-					<div class="experience__body__exp__right__text">DESCRIPTION</div>
+					<div class="experience__body__exp__right__company-name">JustBe Wellness</div>
+					<div class="experience__body__exp__right__text">Built a portfolio website for a well known psychiatrist - Dr. Suman Mundra. Built a brand presence for her and kick started her online journey. Learned a lot about the nature of humans while working closely with her.</div>
 				</div>
 			</div>
 			<div class="experience__body__exp">
 				<div class="experience__body__exp__left">
-					<div class="experience__body__exp__left__date">2020-2023</div>
-					<div class="experience__body__exp__left__position">Senior Web. Developer</div>
+					<div class="experience__body__exp__left__date">April - May 2020</div>
+					<div class="experience__body__exp__left__position">Wordpress Developer</div>
 				</div>
 				<div class="experience__body__exp__right">
-					<div class="experience__body__exp__right__company-name">COMPANY NAME</div>
-					<div class="experience__body__exp__right__text">DESCRIPTION</div>
+					<div class="experience__body__exp__right__company-name">Wealthfare</div>
+					<div class="experience__body__exp__right__text">Started an online Finance Analysis blog website with friends. Built a Custom Theme using Wordpress working heavly in the PHP world and managing Server work, SSL Certificates and everything else.</div>
+				</div>
+			</div>
+			<div class="experience__body__exp">
+				<div class="experience__body__exp__left">
+					<div class="experience__body__exp__left__date">Oct - Dec 2019</div>
+					<div class="experience__body__exp__left__position">Angular Web Portal Developer</div>
+				</div>
+				<div class="experience__body__exp__right">
+					<div class="experience__body__exp__right__company-name">Bird and Animal Helpline</div>
+					<div class="experience__body__exp__right__text">Built a complete portal using Angular for the inner working of Bird and Animal Helpline NGO. Before this, there workflow was totally paper based with no data analysis whatsover. Helped them build a strong foundation for easier everyday workings.</div>
 				</div>
 			</div>
 		</div>
@@ -149,32 +160,29 @@
 		<div class="experience__body">
 			<div class="experience__body__exp">
 				<div class="experience__body__exp__left">
-					<div class="experience__body__exp__left__date">2020-2023</div>
-					<div class="experience__body__exp__left__position">Senior Web. Developer</div>
+					<div class="experience__body__exp__left__date">2018-2022</div>
+					<div class="experience__body__exp__left__position">Bachelores in Information Technology</div>
 				</div>
 				<div class="experience__body__exp__right">
-					<div class="experience__body__exp__right__company-name">COMPANY NAME</div>
-					<div class="experience__body__exp__right__text">DESCRIPTION</div>
+					<div class="experience__body__exp__right__company-name">Fr. Fr. Conceicao Rodrigues College of Engineering, Bandra</div>
 				</div>
 			</div>
 			<div class="experience__body__exp">
 				<div class="experience__body__exp__left">
-					<div class="experience__body__exp__left__date">2020-2023</div>
-					<div class="experience__body__exp__left__position">Senior Web. Developer</div>
+					<div class="experience__body__exp__left__date">2016-2018</div>
+					<div class="experience__body__exp__left__position">Grade XI - XII</div>
 				</div>
 				<div class="experience__body__exp__right">
-					<div class="experience__body__exp__right__company-name">COMPANY NAME</div>
-					<div class="experience__body__exp__right__text">DESCRIPTION</div>
+					<div class="experience__body__exp__right__company-name">Kishinchand Chellaram College,  Churchgate</div>
 				</div>
 			</div>
 			<div class="experience__body__exp">
 				<div class="experience__body__exp__left">
-					<div class="experience__body__exp__left__date">2020-2023</div>
-					<div class="experience__body__exp__left__position">Senior Web. Developer</div>
+					<div class="experience__body__exp__left__date">2013-2016</div>
+					<div class="experience__body__exp__left__position">Grade I - X</div>
 				</div>
 				<div class="experience__body__exp__right">
-					<div class="experience__body__exp__right__company-name">COMPANY NAME</div>
-					<div class="experience__body__exp__right__text">DESCRIPTION</div>
+					<div class="experience__body__exp__right__company-name">Gopi Birla Memorial School</div>
 				</div>
 			</div>
 		</div>
@@ -247,7 +255,22 @@
 
 	<script>
 		// A bit of JS to do the trick
+		var last_updated_link = ""
+		function update_links(){
+			var clicked = window.location.href.split("#")[1];
+			if(last_updated_link != "") document.querySelector("#nav_"+last_updated_link).classList.remove("active");
+			if(clicked.toLowerCase() == "experience") document.querySelector("#nav_"+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "skills") document.querySelector("#nav_"+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "education") document.querySelector("#nav_"+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "clients") document.querySelector("#nav_"+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "resume") document.querySelector("#nav_"+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "contac") document.querySelector("#nav_"+clicked).classList.add("active");
+			last_updated_link = clicked;
+		}
 
+		window.addEventListener("hashchange", update_links);
+
+		// Skills JS
 		function createPill(item, index, arr){
 			var div = document.createElement("DIV");
 			div.textContent = Object.keys(item)[0];

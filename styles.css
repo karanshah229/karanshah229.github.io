@@ -28,7 +28,9 @@ a { text-decoration: none; color: black; }
 
 .header__heading { font-size: 2rem; }
 
-.header__quick_link { margin: 0 1rem; color: #182153; }
+.header__quick_link { margin: 0 1rem; color: #182153; transition: color 200ms ease-in-out; }
+.header__quick_link:hover { color: dodgerblue }
+.header__quick_link.active { color: dodgerblue; }
 
 /* Hero */
 
@@ -52,7 +54,7 @@ a { text-decoration: none; color: black; }
 	max-width: 1000px;
 }
 
-.hero__card__top { display: flex; background-color: #F1F1F1; }
+.hero__card__top { display: flex; }
 
 .hero__card__top div { flex: 1; }
 
@@ -65,10 +67,10 @@ a { text-decoration: none; color: black; }
 }
 
 .hero__card__right {
+	background-color: #F1F1F1;
 	box-sizing: border-box;
 	padding: 3rem 0;
 	padding-left: 5rem;
-	margin-right: -5rem;
 	color: #182153;
 	display: flex;
 	flex-direction: column;
