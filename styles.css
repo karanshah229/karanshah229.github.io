@@ -31,6 +31,8 @@ a { text-decoration: none; color: black; }
 .header__quick_link { margin: 0 1rem; color: #182153; transition: color 200ms ease-in-out; }
 .header__quick_link:hover { color: dodgerblue }
 .header__quick_link.active { color: dodgerblue; }
+.mobile-menu { display: none; }
+.mobile-header span:nth-of-type(2) { display: none; }
 
 /* Hero */
 
@@ -102,7 +104,7 @@ a { text-decoration: none; color: black; }
 .hero__text {
 	box-sizing: border-box;
 	text-align: center;
-	padding-top: 10rem;
+	padding-top: 8rem;
 	padding-bottom: 4rem;
 	background-color: #F1F1F1;
 	display: flex;
@@ -238,6 +240,7 @@ a { text-decoration: none; color: black; }
 
 .skills__body__skill-pills {
 	padding: 3rem 0;
+	padding-bottom: 2rem;
 	width: 1000px;
 	display: flex;
 	flex-wrap: wrap;
@@ -380,4 +383,112 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+	.header .container { display: none; }
+	.header__heading { font-size: 1.5rem; }
+	.mobile-header {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.mobile-header span:nth-of-type(2) { display: block; }
+	.mobile-header span:nth-of-type(2) img { width: 20px; }
+	.mobile-menu {
+		display: none;
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		padding: 2rem 1rem;
+		flex-direction: column;
+		justify-content: space-between;
+		background-color: #182153;
+		opacity: 0.95;
+		z-index: 1000;
+	}
+	#mobile_menu .header__quick_link {
+		font-size: 1.5rem;
+		margin: 0.75rem 0.75rem;
+		color: #ffffff90;
+	}
+	#mobile_menu .header__quick_link .active { color: white; }
+	.mobile_menu_footer {
+		bottom: 0;
+		color: white;
+		z-index: 1001;
+	}
+
+	/* Hero */
+	.hero {
+		height: auto;
+		padding-top: 1rem;
+	}
+	.hero__card {
+		max-width: 90%;
+	}
+	.hero__card__top {
+		display:flex;
+		flex-direction: column;
+	}
+	.hero__card__left {
+		min-height: 50vh;
+	}
+	.hero__card__right {
+		font-size: 1rem;
+		padding-left: 3rem;
+	}
+	.hero__text {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	/* Experience */
+	.experience__body__exp {
+		flex-direction: column;
+	}
+	.experience__body__exp__left {
+		text-align: left;
+	}
+	.experience__body__exp__left::before {
+		float: left;
+		right: unset;
+		left: -1rem;
+	}
+	.experience__body__exp__left, .experience__body__exp__right {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	.experience__body__exp__left__position { font-size: unset; }
+	.experience__body__exp__right__text { margin-top: 5px; font-size: unset; }
+
+
+	/* Skills */
+	.skills__body__search__input {
+		width: 100%;
+	}
+	.skills__body__skill-pills {
+		width: 95%;
+	}
+
+	.clients__body {
+		flex-wrap: wrap;
+	}
+	.clients__body a { margin: 0 1rem; }
+	.clients__body img {
+		opacity: 1;
+	}
+
+	/* Contact */
+	.contact__body {
+		flex-direction: column;
+	}
+
+	.contact__body__left { width: 100%; padding-right: 0; }
+	.contact-form { width: 100% }
+
+	.contact__body__right { margin-top: 2rem; width: 100%; padding-left: 0; }
 }

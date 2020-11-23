@@ -14,7 +14,10 @@
 
 	<!-- Header -->
 	<nav class="header">
-		<div><span class="header__heading">Karan Shah</span></div>
+		<div class="mobile-header">
+			<span class="header__heading">Karan Shah</span>
+			<span onclick="mobile_menu()"><img src="images/hero/menu.png"></span>
+		</div>
 		<nav class="container">
 			<a href="#experience" id="nav_experience" class="header__quick_link">Experience</a>
 			<a href="#skills" id="nav_skills" class="header__quick_link">Skills</a>
@@ -23,6 +26,19 @@
 			<a href="#resume" id="nav_resume" class="header__quick_link">Resume</a>
 			<a href="#contact" id="nav_contact" class="header__quick_link">Contact</a>
 		</nav>
+
+		<div class="mobile-menu" id="mobile_menu">
+			<nav style="display: flex; flex-direction: column">
+				<a href="#experience" onclick="mobile_menu()" id="mob_nav_experience" class="header__quick_link">Experience</a>
+				<a href="#skills" onclick="mobile_menu()" id="mob_nav_skills" class="header__quick_link">Skills</a>
+				<a href="#education" onclick="mobile_menu()" id="mob_nav_education" class="header__quick_link">Education</a>
+				<a href="#clients" onclick="mobile_menu()" id="mob_nav_clients" class="header__quick_link">Clients</a>
+				<a href="#resume" onclick="mobile_menu()" id="mob_nav_resume" class="header__quick_link">Resume</a>
+				<a href="#contact" onclick="mobile_menu()" id="mob_nav_contact" class="header__quick_link">Contact</a>
+				<a onclick="mobile_menu()" class="header__quick_link" style="font-size: 1.2rem">Close</a>
+			</nav>
+			<div class="mobile_menu_footer">Karan</div>
+		</div>
 	</nav>
 
 	<!-- To adjust for Position:Fixed Issues -->
@@ -35,8 +51,8 @@
 		<div class="hero">
 			<div class="hero__card">
 				<div class="hero__card__top">
-					<div class="hero__card__left animate__animated animate__fadeInLeft"></div>
-					<div class="hero__card__right animate__animated animate__fadeInRight">
+					<div id="hero__card__left" class="hero__card__left animate__animated"></div>
+					<div id="hero__card__right" class="hero__card__right animate__animated">
 						<div>
 							<div class="hero__card__right__name">Karan Shah</div>
 							<div class="hero__card__right__profession">SOFTWARE DEVELOPER</div>
@@ -60,7 +76,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="hero__card__bottom animate__animated animate__fadeInUp">
+				<div id="hero__card__bottom" class="hero__card__bottom animate__animated">
 					<span>
 						<a href="https://www.linkedin.com/in/karan-shah-195703169/" target="_blank">
 							<img src="images/social/linkedin.png" alt="Linked In Profile" class="social_link_icons">
@@ -182,7 +198,7 @@
 					<div class="experience__body__exp__left__position">Grade I - X</div>
 				</div>
 				<div class="experience__body__exp__right">
-					<div class="experience__body__exp__right__company-name">Gopi Birla Memorial School</div>
+					<div class="experience__body__exp__right__company-name">Gopi Birla Memorial School, Walkeshwar</div>
 				</div>
 			</div>
 		</div>
@@ -256,19 +272,47 @@
 	<script>
 		// A bit of JS to do the trick
 		var last_updated_link = ""
+		var last_prefix = ""
 		function update_links(){
 			var clicked = window.location.href.split("#")[1];
-			if(last_updated_link != "") document.querySelector("#nav_"+last_updated_link).classList.remove("active");
-			if(clicked.toLowerCase() == "experience") document.querySelector("#nav_"+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "skills") document.querySelector("#nav_"+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "education") document.querySelector("#nav_"+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "clients") document.querySelector("#nav_"+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "resume") document.querySelector("#nav_"+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "contac") document.querySelector("#nav_"+clicked).classList.add("active");
+			var prefix = "#nav_";
+			if(window.innerWidth <= 600) prefix = "#mob_nav_";
+			if(last_updated_link != "") document.querySelector(last_prefix+last_updated_link).classList.remove("active");
+			if(clicked.toLowerCase() == "experience") document.querySelector(prefix+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "skills") document.querySelector(prefix+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "education") document.querySelector(prefix+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "clients") document.querySelector(prefix+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "resume") document.querySelector(prefix+clicked).classList.add("active");
+			else if(clicked.toLowerCase() == "contac") document.querySelector(prefix+clicked).classList.add("active");
 			last_updated_link = clicked;
+			last_prefix = prefix
+		}
+		window.addEventListener("hashchange", update_links);
+
+		var mobile_menu_open = false;
+		function mobile_menu(){
+			if(!mobile_menu_open){
+				mobile_menu_open = true;
+				document.querySelector("#mobile_menu").style.display = "flex";
+			} else {
+				mobile_menu_open = false;
+				document.querySelector("#mobile_menu").style.display = "none";
+			}
 		}
 
-		window.addEventListener("hashchange", update_links);
+		// Animations according to Device Type		
+		document.addEventListener("DOMContentLoaded", function(event) { 
+			if(window.innerWidth < 600){
+				document.querySelector("#hero__card__left").classList.add("animate__fadeInDown");
+				document.querySelector("#hero__card__right").classList.add("animate__fadeInUp");
+				document.querySelector("#hero__card__bottom").classList.add("animate__fadeIn");
+			} else {
+				document.querySelector
+				document.querySelector("#hero__card__left").classList.add("animate__fadeInLeft");
+				document.querySelector("#hero__card__right").classList.add("animate__fadeInRight");
+				document.querySelector("#hero__card__bottom").classList.add("animate__fadeInUp");
+			}
+		});
 
 		// Skills JS
 		function createPill(item, index, arr){
