@@ -1,4 +1,112 @@
 html, body {
 	margin: 0;
 	padding: 0;
+	scroll-behavior: smooth;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.7;
+}
+
+a { text-decoration: none; color: black; }
+.container { display: flex; }
+
+/* Header */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+	background-color: white;
+	color: #182153;
+}
+
+.header__heading { font-size: 2rem; }
+
+.header__quick_link { margin: 0 1rem; color: #182153; }
+
+/* Hero */
+
+.hero {
+	background-image: url("images/hero-background.jpg");
+	background-attachment: fixed;
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 80vh;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.hero__card {
+	margin-bottom: -4.5rem;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	max-width: 900px;
+}
+
+.hero__card__top { display: flex; background-color: #F1F1F1; }
+
+.hero__card__top div { flex: 1; }
+
+.hero__card__left {
+	background-image: url("images/Karan_Shah.jpg");
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: transparent;
+}
+
+.hero__card__right {
+	box-sizing: border-box;
+	padding: 3rem 0;
+	padding-left: 5rem;
+	margin-right: -5rem;
+	color: #182153;
+	display: flex;
+	flex-direction: column;
+	font-size: small;
+	align-items: flex-start;
+}
+
+.hero__card__right div { margin: 7px 0; }
+
+.hero__card__right__name { font-size: 1.5rem; line-height: 1; }
+
+.hero__card__right__profession { font-size: smaller; font-weight: bold; }
+
+.hero__card__right__heading { font-weight: bold; }
+
+.hero__card__bottom {
+	background-color: #182153;
+	color: white;
+	padding: 1.5rem;
+	text-align: center;
+}
+
+.hero__text {
+	box-sizing: border-box;
+	text-align: center;
+	padding-top: 10rem;
+	padding-bottom: 4rem;
+	background-color: #F1F1F1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero__text__heading {
+	font-size: 2rem;
+	font-weight: 900;
+	margin-bottom: 2rem;
+}
+
+.hero__text__body {
+	max-width: 60%;
 }
