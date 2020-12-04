@@ -272,20 +272,17 @@
 	<script>
 		// A bit of JS to do the trick
 		var last_updated_link = ""
-		var last_prefix = ""
 		function update_links(){
 			var clicked = window.location.href.split("#")[1];
-			var prefix = "#nav_";
-			if(window.innerWidth <= 600) prefix = "#mob_nav_";
-			if(last_updated_link != "") document.querySelector(last_prefix+last_updated_link).classList.remove("active");
-			if(clicked.toLowerCase() == "experience") document.querySelector(prefix+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "skills") document.querySelector(prefix+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "education") document.querySelector(prefix+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "clients") document.querySelector(prefix+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "resume") document.querySelector(prefix+clicked).classList.add("active");
-			else if(clicked.toLowerCase() == "contac") document.querySelector(prefix+clicked).classList.add("active");
+			if(last_updated_link != "") {
+				if(document.querySelector("#nav_"+last_updated_link).classList.contains('active'))
+					document.querySelector("#nav_"+last_updated_link).classList.remove("active");
+				if(document.querySelector("#mob_nav_"+last_updated_link).classList.contains('active'))
+					document.querySelector("#mob_nav_"+last_updated_link).classList.remove("active");
+			}
+			document.querySelector("#nav_"+clicked).classList.add("active");
+			document.querySelector("#mob_nav_"+clicked).classList.add("active");
 			last_updated_link = clicked;
-			last_prefix = prefix
 		}
 		window.addEventListener("hashchange", update_links);
 
